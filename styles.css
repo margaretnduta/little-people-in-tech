@@ -1,0 +1,311 @@
+/* --- CSS Variables & Brand Colors --- */
+:root {
+    /* Brand Colors from your identity */
+    --brand-green: #00BF00;     /* Sensory / Accessibility */
+    --brand-blue: #007BFF;      /* Emotional / Inclusion */
+    --brand-orange: #FF6600;    /* Physical / Representation */
+    --brand-dark-blue: #124C8F; /* Top & Bottom Text / Headers */
+    --brand-yellow: #FFD700;    /* Neurodiversity (Gold/Yellow) */
+
+    /* Neutrals for background and text */
+    --text-main: #333333;
+    --text-light: #666666;
+    --bg-light: #F8F9FA;
+    --white: #FFFFFF;
+}
+
+/* --- Global Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--brand-dark-blue);
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Layout Containers --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--brand-orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--brand-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #0069d9;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--brand-dark-blue);
+    color: var(--brand-dark-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-dark-blue);
+    color: var(--white);
+}
+
+/* --- Navigation --- */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--brand-dark-blue);
+    line-height: 1.1;
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--brand-blue);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--bg-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--brand-dark-blue);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight-orange {
+    color: var(--brand-orange);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- Pillars / Cards Section --- */
+.pillars {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--brand-dark-blue);
+    margin-bottom: 15px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 15px 0 10px 0;
+    color: var(--brand-dark-blue);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+}
+
+/* Brand colored card borders */
+.card-green { border-top-color: var(--brand-green); }
+.card-blue { border-top-color: var(--brand-blue); }
+.card-orange { border-top-color: var(--brand-orange); }
+.card-yellow { border-top-color: var(--brand-yellow); }
+
+/* --- CTA Section --- */
+.cta-section {
+    background-color: var(--brand-dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.notify-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notify-form input {
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    width: 300px;
+    font-size: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bg-light);
+    padding: 40px 0 20px 0;
+    color: var(--text-main);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+    color: var(--brand-dark-blue);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .notify-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .notify-form input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
