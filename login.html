@@ -39,23 +39,19 @@
 
         <div class="container">
             <div class="auth-single-card border-blue">
-                <form class="auth-form" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="login-email">Email Address</label>
-                        <input type="email" id="login-email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" id="login-password" placeholder="Enter your password" required>
-                    </div>
-                    <div class="form-actions">
-                        <label class="remember-me">
-                            <input type="checkbox"> Remember me
-                        </label>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
-                    </div>
-                    <button type="submit" class="btn btn-secondary btn-full">Log In</button>
-                </form>
+                <form class="auth-form" action="process-login.php" method="POST">
+    <div class="form-group">
+        <label for="login-email">Email Address</label>
+        <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
+    </div>
+    <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+    </div>
+    <div class="form-actions">
+        </div>
+    <button type="submit" class="btn btn-secondary btn-full">Log In</button>
+</form>
                 
                 <div class="auth-switch">
                     <p>Don't have an account? <a href="signup.html">Sign up here</a></p>

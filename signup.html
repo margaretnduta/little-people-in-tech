@@ -39,32 +39,36 @@
 
         <div class="container">
             <div class="auth-single-card border-yellow">
-                <form class="auth-form" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="reg-name">Full Name</label>
-                        <input type="text" id="reg-name" placeholder="e.g., Jane Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reg-email">Email Address</label>
-                        <input type="email" id="reg-email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reg-password">Create Password</label>
-                        <input type="password" id="reg-password" placeholder="Create a strong password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reg-role">Primary Interest</label>
-                        <select id="reg-role" required>
-                            <option value="">Select an option...</option>
-                            <option value="developer">Software Engineering</option>
-                            <option value="design">Design / UX</option>
-                            <option value="hardware">Hardware / Ergonomics</option>
-                            <option value="sponsor">Sponsorship / Hiring</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
-                </form>
+              <form class="auth-form" action="process-signup.php" method="POST">
+    
+    <div class="form-group">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" name="full_name" placeholder="e.g., Jane Doe" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reg-email">Email Address</label>
+        <input type="email" id="reg-email" name="email" placeholder="you@example.com" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reg-password">Create Password</label>
+        <input type="password" id="reg-password" name="password" placeholder="Create a strong password" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reg-role">Primary Interest</label>
+        <select id="reg-role" name="primary_interest" required>
+            <option value="">Select an option...</option>
+            <option value="developer">Software Engineering</option>
+            <option value="design">Design / UX</option>
+            <option value="hardware">Hardware / Ergonomics</option>
+            <option value="sponsor">Sponsorship / Hiring</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+</form>
 
                 <div class="auth-switch">
                     <p>Already have an account? <a href="login.html">Log in here</a></p>

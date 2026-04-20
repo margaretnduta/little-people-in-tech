@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network & Login | Little People in Tech</title>
+    <title>Network | Little People in Tech</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body>
 
     <header>
         <div class="container nav-container">
@@ -26,76 +26,61 @@
                 </ul>
             </nav>
             <div class="nav-buttons">
-                <a href="#login" class="btn btn-outline">Log In</a>
-                <a href="#signup" class="btn btn-primary">Join Us</a>
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="signup.html" class="btn btn-primary">Join Us</a>
             </div>
         </div>
     </header>
 
     <section class="page-hero">
         <div class="container text-center">
-            <h1>Your <span class="highlight-yellow">Community</span> Hub</h1>
-            <p>Connect with peers, access the member directory, and join discussions in a space designed exclusively for our community.</p>
+            <h1>Our <span class="highlight-yellow">Networking</span> Hub</h1>
+            <p>Welcome to our safe, inclusive space. Before you jump in, here is how we build meaningful connections and support one another in the tech industry.</p>
         </div>
     </section>
 
-    <section class="auth-section">
+    <section class="guidelines-section">
         <div class="container">
-            <div class="auth-grid">
-                
-                <div class="auth-card border-yellow" id="signup">
-                    <h2>Join the Network</h2>
-                    <p>Create an account to access meetups, find collaborations, and connect with mentors.</p>
-                    <form class="auth-form" action="#" method="POST">
-                        <div class="form-group">
-                            <label for="reg-name">Full Name</label>
-                            <input type="text" id="reg-name" placeholder="e.g., Jane Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reg-email">Email Address</label>
-                            <input type="email" id="reg-email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reg-password">Password</label>
-                            <input type="password" id="reg-password" placeholder="Create a strong password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="reg-role">Primary Interest</label>
-                            <select id="reg-role" required>
-                                <option value="">Select an option...</option>
-                                <option value="developer">Software Engineering</option>
-                                <option value="design">Design / UX</option>
-                                <option value="hardware">Hardware / Ergonomics</option>
-                                <option value="sponsor">Sponsorship / Hiring</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
-                    </form>
+            <div class="section-header text-center">
+                <h2>Community Guidelines</h2>
+                <p>How to make the most out of your networking experience.</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="guideline-card border-blue">
+                    <div class="guideline-icon bg-blue">1</div>
+                    <h3>Lead with Empathy & Inclusion</h3>
+                    <p>We all come from different backgrounds. Assume positive intent, be respectful of different communication styles, and create a supportive environment for everyone, particularly when discussing mental health or workplace challenges.</p>
                 </div>
 
-                <div class="auth-card border-blue" id="login">
-                    <h2>Welcome Back</h2>
-                    <p>Log in to your account to pick up where you left off.</p>
-                    <form class="auth-form" action="#" method="POST">
-                        <div class="form-group">
-                            <label for="login-email">Email Address</label>
-                            <input type="email" id="login-email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="login-password">Password</label>
-                            <input type="password" id="login-password" placeholder="Enter your password" required>
-                        </div>
-                        <div class="form-actions">
-                            <label class="remember-me">
-                                <input type="checkbox"> Remember me
-                            </label>
-                            <a href="#" class="forgot-password">Forgot Password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-secondary btn-full">Log In</button>
-                    </form>
+                <div class="guideline-card border-green">
+                    <div class="guideline-icon bg-green">2</div>
+                    <h3>Advocate for Accessibility</h3>
+                    <p>When sharing links, projects, or hosting virtual rooms, ensure your resources are accessible. Use alt-text for images, provide captions where possible, and prioritize universal design in your collaborations.</p>
                 </div>
 
+                <div class="guideline-card border-yellow">
+                    <div class="guideline-icon bg-yellow" style="color: #333;">3</div>
+                    <h3>Embrace Unique Perspectives</h3>
+                    <p>Neurodiversity drives innovation. Be open to unconventional problem-solving methods and encourage out-of-the-box thinking. Share your unique workflow and celebrate the different ways our community approaches tech.</p>
+                </div>
+
+                <div class="guideline-card border-orange">
+                    <div class="guideline-icon bg-orange">4</div>
+                    <h3>Take Action & Lift Others</h3>
+                    <p>Networking is a two-way street. Don't just ask for opportunities—share job postings, offer to review portfolios, and mentor others. Together, we break down professional barriers and increase our representation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="network-cta bg-light">
+        <div class="container text-center">
+            <h2>Ready to Connect?</h2>
+            <p>Join the conversation or log back into your dashboard.</p>
+            <div class="hero-actions" style="margin-top: 30px;">
+                <a href="login.html" class="btn btn-secondary">Log In to Account</a>
+                <a href="signup.html" class="btn btn-primary">Create an Account</a>
             </div>
         </div>
     </section>
