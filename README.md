@@ -1,7 +1,6 @@
 # Little People in Tech (LPiT) 🌐
 
 ![Little People in Tech Homepage Screenshot](images/home.png)
-*(Note: Replace `replace-this-with-your-image-path.png` with the actual file name of your homepage screenshot, e.g., `assets/home-preview.png`)*
 
 ## About The Project
 **Little People in Tech** is a grassroots community platform designed to break down barriers, increase representation, and foster meaningful connections for people of short stature in the technology sector. 
