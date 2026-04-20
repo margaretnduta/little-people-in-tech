@@ -309,3 +309,154 @@ footer {
         gap: 20px;
     }
 }
+/* --- Meetups Page Specific Styles --- */
+
+.text-center {
+    text-align: center;
+}
+
+/* Page Hero (used on internal pages) */
+.page-hero {
+    background-color: var(--brand-dark-blue);
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #e0e0e0;
+}
+
+.highlight-yellow {
+    color: var(--brand-yellow);
+}
+
+/* Events Grid */
+.events-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.events-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-left: 8px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Event Identity Colors */
+.event-green { border-left-color: var(--brand-green); }
+.event-orange { border-left-color: var(--brand-orange); }
+.event-yellow { border-left-color: var(--brand-yellow); }
+
+.event-date {
+    background-color: var(--bg-light);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    border-right: 1px solid #eee;
+}
+
+.event-date .month {
+    font-weight: 800;
+    color: var(--brand-dark-blue);
+    font-size: 1.1rem;
+}
+
+.event-date .day {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+    line-height: 1;
+}
+
+.event-details {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.event-tag {
+    display: inline-block;
+    background-color: #eee;
+    color: var(--text-light);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-details h3 {
+    color: var(--brand-dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* Host CTA */
+.host-cta {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.host-cta h2 {
+    color: var(--brand-dark-blue);
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.host-cta p {
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments for Events */
+@media (max-width: 600px) {
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+    }
+    
+    .event-date .day {
+        font-size: 2rem;
+    }
+}
