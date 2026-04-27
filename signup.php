@@ -39,7 +39,7 @@
 
         <div class="container">
             <div class="auth-single-card border-yellow">
-              <form class="auth-form" action="process-signup.php" method="POST">
+<form class="auth-form" action="process-signup.php" method="POST">
     
     <div class="form-group">
         <label for="reg-name">Full Name</label>

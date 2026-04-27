@@ -1,45 +1,59 @@
 <?php
 // process-signup.php
 session_start();
-require 'db.php'; // Include our database connection
+
+// 1. Database Credentials
+$servername = "localhost";
+$username   = "root";     
+$password   = "";         
+$dbname     = "little_people_in_tech";
+
+// 2. Create Connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check Connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // 1. Grab the form data securely
+    // 1. Grab and sanitize the form data
     $full_name = htmlspecialchars(trim($_POST['full_name']));
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $plain_password = $_POST['password'];
     $primary_interest = htmlspecialchars(trim($_POST['primary_interest']));
 
-    // 2. Hash the password for security (NEVER store plain text)
+    // 2. Hash the password
     $hashed_password = password_hash($plain_password, PASSWORD_DEFAULT);
 
-    try {
-        // 3. Prepare the SQL statement to prevent SQL injection
-        $stmt = $pdo->prepare("INSERT INTO users (full_name, email, password, primary_interest) VALUES (:full_name, :email, :password, :primary_interest)");
-        
-        // 4. Bind the parameters and execute
-        $stmt->bindParam(':full_name', $full_name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashed_password);
-        $stmt->bindParam(':primary_interest', $primary_interest);
-        
-        $stmt->execute();
+    // 3. Prepare the SQL statement (MySQLi style)
+    // We use ? as placeholders to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, primary_interest) VALUES (?, ?, ?, ?)");
+    
+    // 4. Bind the parameters
+    // "ssss" means we are passing 4 Strings
+    $stmt->bind_param("ssss", $full_name, $email, $hashed_password, $primary_interest);
 
-        // 5. Success! Redirect the user to the login page
-        $_SESSION['success_message'] = "Account created successfully! Please log in.";
+    // 5. Execute
+    if ($stmt->execute()) {
+        // Success!
+        $_SESSION['success_message'] = "Account created successfully!";
         header("Location: login.html");
         exit();
-
-    } catch(PDOException $e) {
-        // Handle duplicate emails (since email is UNIQUE in our database)
-        if($e->getCode() == 23000) {
+    } else {
+        // Handle Errors (like duplicate emails)
+        if ($conn->errno == 1062) {
             die("Error: That email address is already registered.");
         } else {
-            die("Database Error: " . $e->getMessage());
+            die("Database Error: " . $conn->error);
         }
     }
+
+    $stmt->close();
 } else {
     header("Location: signup.html");
     exit();
 }
+
+$conn->close();
 ?>
